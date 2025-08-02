@@ -12,17 +12,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AddCustomerPage {
+public class AddCustomerPage extends BasePage {
 
-	WebDriver ldriver;
-	WebDriverWait await;
-	
 	public AddCustomerPage(WebDriver rdriver){
-		ldriver = rdriver;
-		await = new WebDriverWait(ldriver,Duration.ofSeconds(10));
-		PageFactory.initElements( ldriver,this);
-		
+		super(rdriver);
 	}
+//	WebDriver ldriver;
+//	WebDriverWait await;
+//	
+//	public AddCustomerPage(WebDriver rdriver){
+//		ldriver = rdriver;
+//		await = new WebDriverWait(ldriver,Duration.ofSeconds(10));
+//		PageFactory.initElements( ldriver,this);
+//		
+//	}
 	
 	By customersMenu = By.xpath("//a[@href='#']//p[contains(text(),'Customers')]");
 	By customerMenuItem = By.xpath("(//p[contains(text(),'Customers')])[2]");

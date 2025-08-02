@@ -9,18 +9,23 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 	
-	WebDriver ldriver;
-	WebDriverWait await; 
-	
-	
-	public LoginPage(WebDriver rdriver){
-        ldriver = rdriver;
-
-    	await = new WebDriverWait(ldriver,Duration.ofSeconds(10));
-        PageFactory.initElements(rdriver,this);
+public LoginPage(WebDriver rdriver) {
+		super(rdriver);
+		// TODO Auto-generated constructor stub
 	}
+
+//	WebDriver ldriver;
+//	WebDriverWait await; 
+//	
+//	
+//	public LoginPage(WebDriver rdriver){
+//        ldriver = rdriver;
+//
+//    	await = new WebDriverWait(ldriver,Duration.ofSeconds(10));
+//        PageFactory.initElements(rdriver,this);
+//	}
 	
 	@FindBy(xpath="//input[@id='Email']") WebElement LoginInput;
 	@FindBy(xpath="//input[@class='password']") WebElement PasswordInput;

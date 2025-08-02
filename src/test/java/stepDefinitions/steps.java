@@ -9,9 +9,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import pageObjects.AddCustomerPage;
 import pageObjects.LoginPage;
+import pageObjects.SearchCustomerPage;
 
 public class steps {
 	
@@ -19,6 +21,7 @@ public class steps {
 	WebDriverWait await;
 	LoginPage lp;
 	AddCustomerPage acp;
+	SearchCustomerPage scp;
 	
 	 public static boolean isAlertPresent(WebDriver driver) {
 	        try {
@@ -28,10 +31,16 @@ public class steps {
 	            return false;
 	        }
 	    }
+	 
+	@Before
+	public void setup() {
+		driver = new ChromeDriver();
+		scp = new SearchCustomerPage(driver);
+	}
 	
 	@Given("User launch chrome browser")
 	public void user_launch_chrome_browser() {
-	    driver = new ChromeDriver();
+//	    driver = new ChromeDriver();
 	    lp = new LoginPage(driver);	
 	}
 
@@ -96,7 +105,7 @@ public class steps {
 
 	@Then("User enter customer info")
 	public void user_enter_customer_info() {
-      acp.setEmail("ashitosh1@gmail.com");
+      acp.setEmail("ashitosh100@gmail.com");
       acp.setPassword("12345");
       acp.setFirstName("Ashitosh");
       acp.setLastName("Kole");
@@ -123,6 +132,41 @@ public class steps {
 		System.out.println(acp.confirmMessage());
 	    Assert.assertEquals(successMsg.trim(), acp.confirmMessage().replace("×", "").trim());
 	}
+	
+//	Search customer by EmailId 
+	@When("Enter customer Email")
+	public void enter_customer_email() {
+		scp = new SearchCustomerPage(driver);
+		scp.enterEmail("victoria_victoria@nopCommerce.com");
+	}
+
+	@When("Click on search button")
+	public void click_on_search_button() {
+		scp.clickSeacrchBtn();
+	}
+
+	@Then("User should found Email in the Search table")
+	public void user_should_found_email_in_the_searcg_table() {
+		Assert.assertEquals("victoria_victoria@nopCommerce.com", scp.isEmailAvailable());
+	}
+	
+	@When("Enter customer FirstName")
+	public void enter_customer_first_name() {
+            scp.setFirstName("victoria"); 
+	}
+
+	@When("Enter customer LastName")
+	public void enter_customer_last_name() {
+		scp.setLastName("Terces");
+	}
+
+	@Then("User should found Name in the Search table")
+	public void user_should_found_name_in_the_search_table() {
+          
+       Assert.assertEquals(true,scp.isNameAvailable("victoria","terces"));
+	}
+
+
 
 
 
