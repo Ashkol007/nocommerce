@@ -2,8 +2,8 @@ pipeline {
   agent any
 
   tools {
-    jdk 'jdk-17'                // Match your configured JDK name
-    maven 'maven-3.9.6'         // Match your configured Maven name
+    jdk 'MyJava'                // Match your configured JDK name
+    maven 'MyMaven'         // Match your configured Maven name
   }
 
   stages {
