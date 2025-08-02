@@ -30,10 +30,13 @@ pipeline {
     }
   }
 
-  post {
-    always {
-      junit 'target/surefire-reports/*.xml'
-      archiveArtifacts 'target/**/*.log'
-    }
+ post {
+  always {
+    publishHTML([
+      reportDir: 'target/cucumber-html-report',
+      reportFiles: 'index.html',
+      reportName: 'Cucumber HTML Report'
+    ])
   }
 }
+
