@@ -65,7 +65,12 @@ public class steps {
 	public void page_title_should_be(String title) {
 	   Assert.assertEquals(driver.getTitle(), title);
 	}
-
+	
+	@Then("Page Title after logout should be")
+	public void page_title_after_logout_should_be(String title) {
+		   Assert.assertEquals(driver.getTitle(), title);
+		}
+	
 	@When("User click on Logout link")
 	public void user_click_on_logout_link() {
 		lp.Logout();

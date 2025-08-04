@@ -1,21 +1,42 @@
 -------------------------------------------------------------------------------
 Test set: testRunner.TestRun
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 27.63 s <<< FAILURE! -- in testRunner.TestRun
-Customers.Search Customer by EmailId -- Time elapsed: 5.975 s <<< ERROR!
+Tests run: 6, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 48.11 s <<< FAILURE! -- in testRunner.TestRun
+Login.Login with Data Driven #1 -- Time elapsed: 6.147 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'Page Title after logout should be "nopCommerce demo store. Login"' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("Page Title after logout should be {string}")
+public void page_title_after_logout_should_be(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Login.Login with Data Driven #2 -- Time elapsed: 3.804 s <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[nopCommerce demo store. Logi]n> but was:<[Dashboard / nopCommerce administratio]n>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at stepDefinitions.steps.page_title_should_be(steps.java:66)
+	at ✽.Page Title should be "Dashboard / nopCommerce administration"(file:///D:/Ecllipse/nocommerce_v1_cucumber/./Features/Login.feature:18)
+
+Customers.Add a new Customer -- Time elapsed: 10.05 s <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"(//td[@class='text-center'])[1]/following-sibling::td[1]"}
-  (Session info: chrome=138.0.7204.169)
+no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='alert alert-success alert-dismissable']"}
+  (Session info: chrome=138.0.7204.184)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.1'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [81fa69ec1322b740675b99d5c95a841c, findElement {value=(//td[@class='text-center'])[1]/following-sibling::td[1], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.183 (e90faf484dd..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55636}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55636/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 81fa69ec1322b740675b99d5c95a841c
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+Command: [5c7248ede6f2f3915547d9ac3afa7a42, findElement {value=//div[@class='alert alert-success alert-dismissable'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.184, chrome: {chromedriverVersion: 138.0.7204.183 (e90faf484dd..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56494}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56494/devtoo..., se:cdpVersion: 138.0.7204.184, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5c7248ede6f2f3915547d9ac3afa7a42
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -27,19 +48,16 @@ Session ID: 81fa69ec1322b740675b99d5c95a841c
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.getText(Unknown Source)
-	at pageObjects.SearchCustomerPage.isEmailAvailable(SearchCustomerPage.java:40)
-	at stepDefinitions.steps.user_should_found_email_in_the_searcg_table(steps.java:150)
-	at ✽.User should found Email in the Search table(file:///D:/Ecllipse/nocommerce_v1_cucumber/./Features/customers.feature:27)
+	at pageObjects.AddCustomerPage.confirmMessage(AddCustomerPage.java:189)
+	at stepDefinitions.steps.user_can_view_confirmation_message(steps.java:137)
+	at ✽.User can view confirmation message "The new customer has been added successfully."(file:///D:/Ecllipse/nocommerce_v1_cucumber/./Features/customers.feature:14)
 
-Customers.Search Customer by Name -- Time elapsed: 6.139 s <<< FAILURE!
+Customers.Search Customer by Name -- Time elapsed: 8.564 s <<< FAILURE!
 java.lang.AssertionError: expected:<true> but was:<false>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
 	at org.junit.Assert.assertEquals(Assert.java:120)
 	at org.junit.Assert.assertEquals(Assert.java:146)
-	at stepDefinitions.steps.user_should_found_name_in_the_search_table(steps.java:166)
+	at stepDefinitions.steps.user_should_found_name_in_the_search_table(steps.java:171)
 	at ✽.User should found Name in the Search table(file:///D:/Ecllipse/nocommerce_v1_cucumber/./Features/customers.feature:41)
 

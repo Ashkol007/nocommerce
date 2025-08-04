@@ -17,7 +17,7 @@ Scenario Outline: Login with Data Driven
         And Click on login 
         Then Page Title should be "Dashboard / nopCommerce administration"
         When User click on Logout link
-        Then Page Title should be "nopCommerce demo store. Login"
+        Then Page Title after logout should be "nopCommerce demo store. Login"
         And close browser        
         
         Examples:
