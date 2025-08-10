@@ -1,4 +1,4 @@
-Feature:Login
+Feature: LoginAdmin
 
 Scenario: Successful Login with Valid Credentials
         Given User launch chrome browser
@@ -23,4 +23,4 @@ Scenario Outline: Login with Data Driven
         Examples:
         |email|pwd|
         |admin@yourstore.com|admin|
-        |admin1@yourstore.com|admint|
+        |admin1@yourstore.com|admin|

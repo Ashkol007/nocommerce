@@ -6,14 +6,13 @@ import org.junit.Assert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
-import pageObjects.AddCustomerPage;
-import pageObjects.LoginPage;
-import pageObjects.SearchCustomerPage;
+import pageObjects.Admin.AddCustomerPage;
+import pageObjects.Admin.LoginPage;
+import pageObjects.Admin.SearchCustomerPage;
 
 public class steps {
 	

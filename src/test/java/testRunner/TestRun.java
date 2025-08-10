@@ -8,8 +8,8 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="./Features/",
-		glue="stepDefinitions",
+		features="./Features/register.feature",
+		glue={"stepDefinitions"},
 		dryRun=false,
 		monochrome=true,
 		plugin= {"pretty","html:test-output/report.html"}

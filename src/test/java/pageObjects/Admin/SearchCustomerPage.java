@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.Admin;
 
 import java.util.List;
 

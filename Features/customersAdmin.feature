@@ -1,4 +1,4 @@
-Feature: Customers
+Feature: customersAdmin
 
 Scenario: Add a new Customer
     Given User launch chrome browser
